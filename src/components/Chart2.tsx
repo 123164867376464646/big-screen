@@ -18,8 +18,8 @@ export const Chart2 = () => {
 			},
 			legend: {
 				top:'89%',
-				left:'37%',
-				itemGap: 6,
+				left:'30%',
+				itemGap: px(6),
 				itemWidth: 18,
 				itemHeight: 10,
 				textStyle:{

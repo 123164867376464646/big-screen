@@ -8,14 +8,18 @@
   color: white;
 
   > header {
+    width: px(2420);
+    margin: 0 auto;
     height: px(99);
     background-size: cover;
   }
 
   > main {
+    width: px(2420);
+    margin: 0 auto;
     flex: 1;
     display: grid;
-    padding-top: 30px;
+    padding-top: px(26);
     grid-template:
       "box1 box2 box4 box5" 755fr
       "box3 box3 box4 box5" 363fr / 366fr 361fr 811fr 747fr;
@@ -47,32 +51,30 @@
         0 9px 0 -8px #0f3c77,
         0 -9px 0 -8px #0f3c77,
       }
-      h2 {
-        border: 1px solid #0b4e93;
-        border-radius: 0 0 4px 4px;
-        font-size: px(22);
-        line-height: px(24);
-        padding: px(10) px(28);
-        text-shadow: 0 0 px(3) white;
-      }
-      .chart{
-        flex: 1;
-        width: 100%;
-      }
-      &.管辖统计 {
-        height: px(315);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      &.破获排名{
-        height: px(423);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-    }
 
+
+    }
+    h2 {
+      border: 1px solid #0b4e93;
+      border-radius: 0 0 4px 4px;
+      font-size: px(22);
+      line-height: px(24);
+      padding: px(10) px(28);
+      text-shadow: 0 0 px(3) white;
+    }
+    .chart{
+      flex: 1;
+      width: 100%;
+    }
+    .管辖统计,.破获排名 {
+      height: px(315);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .破获排名{
+      height: px(423);
+    }
     > .section1 {
       grid-area: box1;
       display: flex;
