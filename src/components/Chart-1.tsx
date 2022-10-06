@@ -11,7 +11,7 @@ export const Chart1 = () => {
 				data: ['渝中区', '南岸区', '江北区', '渝北区', '九龙坡区', '沙坪坝区', '北碚区', '巴南区', '大渡口区'],
 				axisLabel: {
 					interval: 0,
-					color: '#414d6c',
+					color: '#6c82a1',
 					formatter: function(value) {
 						if(value.length > 2) {
 							const array = value.split('');
@@ -30,12 +30,14 @@ export const Chart1 = () => {
 				},
 			},
 			yAxis: {
+				splitLine: {
+					show: false
+				},
 				axisLine: {
 					show: true,
 					lineStyle: {color: '#09376a'}
 				}
-			}
-			,
+			},
 			series: [
 				{
 					type: 'bar',
