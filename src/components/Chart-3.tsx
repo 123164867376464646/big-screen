@@ -17,11 +17,14 @@ export const Chart3 = () => {
 			},
 			legend: {
 				data: ['盗窃', '醉驾', '诈骗', '故意伤人'],
-				textStyle: {color: 'white'},
+				textStyle: {
+					color: 'white',
+					fontSize:px(18)
+				},
 				itemWidth: px(30),
 				itemHeight: px(16),
 				top: '70%',
-				left: '2%',
+				left: '10%',
 			},
 			xAxis: {
 				type: 'category',
