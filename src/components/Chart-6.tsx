@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import * as echarts from 'echarts';
-import china from '../geo/china-geojson/china.json';
+import china from '../geo/china.json';
+import {createEchartsOptions} from '../shared/create-echarts-options';
 
 export const Chart6 = () => {
 	const divRef = useRef(null);
@@ -11,7 +12,7 @@ export const Chart6 = () => {
 
 		// @ts-ignore
 		echarts.registerMap('CN', china);
-		myChart.setOption({
+		myChart.setOption(createEchartsOptions({
 			xAxis: {show: false},
 			yAxis: {show: false},
 			series: [
@@ -68,7 +69,7 @@ export const Chart6 = () => {
 				},
 
 			]
-		});
+		}));
 	}, []);
 
 	return (

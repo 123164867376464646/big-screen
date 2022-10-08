@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/geo/china-geojson" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/geo/geojson-map-china" vcs="Git" />
   </component>
 </project>
