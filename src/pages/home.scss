@@ -54,6 +54,7 @@
 
 
     }
+
     h2 {
       border: 1px solid #0b4e93;
       border-radius: 0 0 4px 4px;
@@ -62,22 +63,31 @@
       padding: px(10) px(28);
       text-shadow: 0 0 px(3) white;
     }
-    .chart{
+
+    .chart {
       flex: 1;
       width: 100%;
     }
-    .管辖统计,.破获排名,.趋势分析 {
+
+    .管辖统计, .破获排名, .趋势分析, .案发时段 {
       height: px(315);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .破获排名{
+
+    .破获排名 {
       height: px(423);
     }
-    .趋势分析{
+
+    .趋势分析 {
       height: px(423);
     }
+
+    .案发时段 {
+      height: px(310);
+    }
+
     > .section1 {
       grid-area: box1;
       display: flex;
@@ -87,6 +97,9 @@
 
     > .section2 {
       grid-area: box2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     > .section3 {
@@ -101,7 +114,8 @@
       grid-area: box5;
     }
   }
-  >footer{
+
+  > footer {
     height: px(68);
     border: 1px solid #0d2d59;
     margin: px(20) 0 1px;
