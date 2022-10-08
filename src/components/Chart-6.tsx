@@ -21,8 +21,10 @@ export const Chart6 = () => {
 					data: [
 						{name: '甘肃省', value: 1},
 					],
-					label: {show: true, color: 'white'},
+					label: {show: false, color: 'white'},
 					itemStyle: {
+						shadowColor: '#002b62',
+						shadowBlur: 2,
 						areaColor: '#010D3D',
 						color: colors['甘肃省'],
 						borderColor: '#01A7F7',
