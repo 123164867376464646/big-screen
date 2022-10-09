@@ -41,7 +41,7 @@ export const Home = () => {
 					</div>
 				</section>
 				<section className="bordered section5">
-					<div className='nihao'>
+					<div className="nihao">
 						你好
 					</div>
 				</section>
