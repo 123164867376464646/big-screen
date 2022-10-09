@@ -7,8 +7,12 @@ import {px} from '../shared/px';
 
 export const Chart6 = () => {
 	const divRef = useRef(null);
+	const myChart = useRef(null);
+	let mTime = undefined;
+	let index = -1;
+
 	useEffect(() => {
-		const myChart = echarts.init(divRef.current);
+		myChart.current = echarts.init(divRef.current);
 		// @ts-ignore
 		echarts.registerMap('CN', china);
 		let chartOption = {
@@ -17,7 +21,6 @@ export const Chart6 = () => {
 				triggerOn: 'mousemove|click',
 				showDelay: 0,
 				alwaysShowContent: true,
-				position: [px(10), px(10)],
 				backgroundColor: '#0f113a',
 				borderColor: '#6879e4',
 				borderWidth: px(2),
@@ -58,7 +61,7 @@ export const Chart6 = () => {
 				{
 					name: '分布情况',
 					type: 'map',
-					mapType: 'CN',
+					map: 'CN',
 					data: AreaArray(),
 					label: {show: false, color: 'white'},
 					itemStyle: {
@@ -75,16 +78,56 @@ export const Chart6 = () => {
 				},
 			]
 		};
-		myChart.setOption(createEchartsOptions(chartOption));
-
-		tools.loopShowTooltip(myChart, chartOption, {loopSeries: true});
+		myChart.current.setOption(createEchartsOptions(chartOption));
 	}, []);
 
-
+	const mapActive = () => {
+		const dataLength = china.features.length;
+		// 用定时器控制高亮
+		mTime = setInterval(() => {
+			// 清除之前的高亮
+			myChart.current.dispatchAction({
+				type: 'downplay',
+				seriesIndex: 0,
+				dataIndex: index
+			});
+			index++;
+			// 当前下标高亮
+			myChart.current.dispatchAction({
+				type: 'highlight',
+				seriesIndex: 0,
+				dataIndex: index
+			});
+			myChart.current.dispatchAction({
+				type: 'showTip',
+				seriesIndex: 0,
+				dataIndex: index
+			});
+			if(index > dataLength) {
+				index = 0;
+			}
+		}, 1500);
+	};
+	useEffect(() => {
+		mapActive();
+	}, []);
+	const onMouseOver = () => {
+		clearInterval(mTime);
+		mTime = undefined;
+		console.log(mTime);
+		myChart.current.dispatchAction({
+			type: 'downplay',
+			seriesIndex: 0,
+			dataIndex: index
+		});
+	};
+	const onMouseOut = () => {
+		mapActive();
+	};
 	return (
 		<div className="bordered 分布地">
 			<h2>全市犯罪人员籍贯分布地</h2>
-			<div ref={divRef} className="chart"></div>
+			<div onMouseOver={onMouseOver} onMouseOut={onMouseOut} ref={divRef} className="chart"></div>
 			<div className="notes">此地图仅展示部分地区</div>
 		</div>
 	);
