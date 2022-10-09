@@ -55,7 +55,7 @@
     }
 
     h2 {
-      border: 1px solid #0b4e93;
+      border: 1px solid #0f345e;
       border-radius: 0 0 4px 4px;
       font-size: px(22);
       line-height: px(24);
@@ -113,30 +113,11 @@
     .分布地 {
       height: px(760);
       background: transparent;
-      > .wrapper {
-        position: relative;width: 100%;flex: 1;
-        display: flex; flex-direction: column;
-        .chart {flex: 1;}
-        .legend {
-          position: absolute;top: px(40);left: px(20);display: flex;
-          align-items: center;
-          font-size: px(22); padding: px(20) px(10) px(20) 0;
-          border-radius: 0;
-          .icon {
-            margin: 0 px(10);
-            display: inline-block;
-            width: px(16);
-            height: px(16);
-            border-radius: 50%;
-            background: #1cecd9;
-          }
-        }
         .notes{
           position: absolute;
           bottom: px(10);
           right: px(10);
         }
-      }
     }
 
     > .section1 {

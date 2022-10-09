@@ -381,6 +381,11 @@
   dependencies:
     "ms" "2.1.2"
 
+"echart-tooltip-loop@^1.0.1":
+  "integrity" "sha512-GMOkuUNl/qGcvjhUSHdh+UXPzq9H1R8SSSnM7QDsXq0HHkYM3A0nY4jmuZxmSqE1my/OPtXbN594p5B8ttBKEA=="
+  "resolved" "https://registry.npmmirror.com/echart-tooltip-loop/-/echart-tooltip-loop-1.0.1.tgz"
+  "version" "1.0.1"
+
 "echarts@5.0.2":
   "integrity" "sha512-En0VYpc96nw2/2AZoBWPHsGi471zMublttj50kfFpYAeR4geup0Tj9iVgEXh7QYZFPnRiruDJEjcB5PXZ+BYzQ=="
   "resolved" "https://registry.npmmirror.com/echarts/-/echarts-5.0.2.tgz"
