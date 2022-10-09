@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "sh scripts/deploy.sh"
   },
   "dependencies": {
     "echart-tooltip-loop": "^1.0.1",
