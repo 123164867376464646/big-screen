@@ -50,6 +50,11 @@ export const Chart3 = () => {
 					lineStyle: {
 						color: '#05417d'
 					}
+				},
+				axisLabel: {
+					formatter(val) {
+						return val * 100 + '%';
+					}
 				}
 			},
 			series: [
@@ -57,25 +62,25 @@ export const Chart3 = () => {
 					name: '盗窃',
 					type: 'line',
 					stack: 'Total',
-					data: [332, 280, 211, 200, 190, 140, 120, 100, 50, 30]
+					data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse()
 				},
 				{
 					name: '醉驾',
 					type: 'line',
 					stack: 'Total',
-					data: [332, 280, 211, 200, 190, 140, 120, 100, 50, 30]
+					data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse()
 				},
 				{
 					name: '诈骗',
 					type: 'line',
 					stack: 'Total',
-					data: [332, 280, 211, 200, 190, 140, 120, 100, 50, 30]
+					data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11].reverse()
 				},
 				{
 					name: '故意伤人',
 					type: 'line',
 					stack: 'Total',
-					data: [332, 280, 211, 200, 190, 140, 120, 100, 50, 30]
+					data: [0.05, 0.06, 0.07, 0.08, 0.09, 0.10, 0.11, 0.12, 0.13].reverse()
 				}
 			].map(obj => ({
 				...obj,

@@ -40,14 +40,26 @@ export const Home = () => {
 						</div>
 					</div>
 				</section>
-				<section className="bordered section5">
-					<div className="nihao">
-						你好
+				<section className="section5">
+					<div className="bordered row1 案发类型">
+						<h2>案发类型统计</h2>
+						<div className="charts">
+
+						</div>
+					</div>
+					<div className="bordered row2 案发街道">
+						<h2>案发街道统计</h2>
+						<div className="charts">
+
+						</div>
+					</div>
+					<div className="bordered row3 作案手段">
+						<h2>作案手段分析</h2>
 					</div>
 				</section>
 			</main>
 			<footer>
-				&copy; 饥人谷 2020-{year}
+				&copy; 西南区 2020-{year}
 			</footer>
 		</div>
 	);
