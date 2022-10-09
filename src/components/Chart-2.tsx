@@ -6,9 +6,36 @@ import {px} from '../shared/px';
 
 export const Chart2 = () => {
 	const chartRef = useRef(null);
+	const myChart = useRef(null);
+	const data = [
+		{name: '渝南区', 2011: 2, 2012: 3},
+		{name: '岸南区', 2011: 2, 2012: 3},
+		{name: '江南区', 2011: 2, 2012: 3},
+		{name: '渝西区', 2011: 2, 2012: 3},
+		{name: '九龙区', 2011: 2, 2012: 3},
+		{name: '沙坪区', 2011: 2, 2012: 3},
+		{name: '北倍区', 2011: 2, 2012: 3},
+		{name: '巴中区', 2011: 2, 2012: 3},
+		{name: '大渡区', 2011: 2, 2012: 3},
+	];
 	useEffect(() => {
-		const myChart = echarts.init(chartRef.current);
-		myChart.setOption(createEchartsOptions({
+		setInterval(() => {
+			const newDate = [
+				{name: '渝南区', 2011: 2, 2012: Math.random()*10},
+				{name: '岸南区', 2011: 2, 2012: 3},
+				{name: '江南区', 2011: 2, 2012: 3},
+				{name: '渝西区', 2011: 2, 2012: 3},
+				{name: '九龙区', 2011: 2, 2012: 3},
+				{name: '沙坪区', 2011: 2, 2012: 3},
+				{name: '北倍区', 2011: 2, 2012: 3},
+				{name: '巴中区', 2011: 2, 2012: 3},
+				{name: '大渡区', 2011: 2, 2012: 3},
+			];
+			x(newDate);
+		}, 1000);
+	}, []);
+	const x = (data) => {
+		myChart.current.setOption(createEchartsOptions({
 			grid: {
 				left: "5%",
 				bottom: "15%",
@@ -17,13 +44,13 @@ export const Chart2 = () => {
 				containLabel: true,
 			},
 			legend: {
-				top:'89%',
-				left:'30%',
+				top: '89%',
+				left: '30%',
 				itemGap: px(6),
 				itemWidth: 18,
 				itemHeight: 10,
-				textStyle:{
-					color:'#83accb',
+				textStyle: {
+					color: '#83accb',
 					fontSize: px(16)
 				}
 			},
@@ -35,15 +62,15 @@ export const Chart2 = () => {
 			},
 			yAxis: {
 				type: 'category',
-				data: ['渝南区', '岸南区', '江南区', '渝西区', '九龙区', '沙坪区', '北倍区', '巴中区', '大渡区'],
+				data: data.map(i => i.name),
 				axisTick: {show: false},
 			},
 
 			series: [
 				{
-					name: '破案排名1',
+					name: '2020',
 					type: 'bar',
-					data: [5, 3, 2, 4, 1, 6, 9, 7, 8],
+					data: data.map(i => i[2011]),
 					color: {
 						type: 'linear',
 						x: 0,
@@ -58,9 +85,9 @@ export const Chart2 = () => {
 					},
 				},
 				{
-					name: '破案排名2',
+					name: '2021',
 					type: 'bar',
-					data: [5, 3, 2, 4, 1, 6, 9, 7, 8],
+					data: data.map(i => i[2012]),
 					color: {
 						type: 'linear',
 						x: 0,
@@ -75,8 +102,11 @@ export const Chart2 = () => {
 					},
 				}
 			]
-		}))
-		;
+		}));
+	};
+	useEffect(() => {
+		myChart.current = echarts.init(chartRef.current);
+		x(data);
 	}, []);
 
 	return (

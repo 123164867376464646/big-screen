@@ -278,7 +278,6 @@ const AreaArray = () => {
 	for(let i = 0; i < 34; i++) {
 		x.push({name: area[i], value: i});
 	}
-	console.log(x);
 	return x
 };
 export default AreaArray;
