@@ -76,7 +76,10 @@ export const Chart6 = () => {
 			]
 		};
 		myChart.setOption(createEchartsOptions(chartOption));
+
+		tools.loopShowTooltip(myChart, chartOption, {loopSeries: true});
 	}, []);
+
 
 	return (
 		<div className="bordered 分布地">
