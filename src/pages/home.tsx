@@ -13,6 +13,7 @@ import {Chart9} from '../components/Chart-9';
 import {Chart10} from '../components/Chart-10';
 import {Chart11} from '../components/Chart-11';
 import {Chart12} from '../components/Chart-12';
+import {Chart13} from '../components/Chart-13';
 
 export const Home = () => {
 
@@ -55,6 +56,7 @@ export const Home = () => {
 						<h2>案发街道统计</h2>
 						<div className="charts">
 							<Chart12/>
+							<Chart13/>
 						</div>
 					</div>
 					<div className="bordered row3 作案手段">
